@@ -6,7 +6,6 @@ colorscheme desert
 set tabstop=2
 set numberwidth=3
 set autoindent
-set nocompatible
 set history=50
 set ruler
 set showcmd
@@ -39,3 +38,42 @@ augroup END
 "if has('mouse')
 "  set mouse=a
 "endif
+
+" #################### Vundle ####################
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kana/vim-textobj-user' 
+Plugin 'tpope/vim-repeat'
+Plugin 'kana/vim-textobj-line'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'christoomey/vim-titlecase'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'christoomey/vim-system-copy'
+Plugin 'christoomey/vim-sort-motion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'terryma/vim-multiple-cursors'
+
+" more Plugin commands
+
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --path-to-ignore ~/.ignore --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+" ...
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Custom Key Bindings
+map <C-h> :NERDTreeToggle<CR>
+
