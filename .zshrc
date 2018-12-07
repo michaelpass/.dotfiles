@@ -7,27 +7,16 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export MANPATH=$MANPATH:/opt/local/share/man
 PLUGINS=$ZSH/plugins
-export PATH=$PATH:~/.platformio/penv/bin
-
-
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="alanpeabody"
 
-eval $(thefuck --alias)
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
-alias we='ansiweather -l "Iowa City, US" -u imperial'
-alias weather='ansiweather -l "Iowa City, US" -u imperial'
 alias f='open -a Finder ./'
 alias hide='chflags hidden'
 alias finder='open -a Finder ./'
-alias edit='subl'
-alias newterm="~/.customscripts/opennewterm.sh"
-alias dropbox="/usr/local/Cellar/dropbox-uploader/1.0/bin/dropbox_uploader.sh"
-alias updatelocate="sudo /usr/libexec/locate.updatedb"
-alias ag='ag --path-to-ignore ~/.ignore'
 
 # Overide aliases
 alias lsl="ls -la"
@@ -94,22 +83,18 @@ plugins=(
   history-substring-search
   brew
   chucknorris
-  compleat
   git-extras
 	lol
   pep8
   pip
   python
-  sublime
   web-search
   autojump
 	colored-man-pages
 	osx
 	zsh_reload
 	man
-  marked2
 	tmux
-	tmuxinator
 )
 
 source $ZSH/oh-my-zsh.sh
