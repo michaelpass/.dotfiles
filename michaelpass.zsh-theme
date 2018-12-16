@@ -1,4 +1,4 @@
-# alanpeabody.zsh-theme
+# michaelpass.zsh-theme
 
 local user='%{$fg[green]%}%n%{$fg_bold[white]%}@%{$fg_bold[yellow]%}%m%{$reset_color%}'
 local pwd='%{$fg_bold[blue]%}%~%{$reset_color%}'
@@ -15,7 +15,7 @@ local git_branch='$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✘"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚"
@@ -30,7 +30,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭"
 
 PROMPT=" %{$reset_color%}
 %{$FG[075]%}%n%{$fg_bold[white]%}@%{$FG[078]%}%m%{$fg_bold[white]%}:%{$FG[227]%}%~ 
-%{$FG[248]%}%D{%L:%M}%{$FG[248]%}%D{%p}%f %{$FG[105]%}%(!.#.»)%{$reset_color%} "
+%{$FG[248]%}%D{%L:%M}%{$FG[248]%}%D{%p} %{$FG[105]%}%(!.#.»)%{$reset_color%} "
 
 RPROMPT="${return_code} ${git_branch} ${rvm}"
 
