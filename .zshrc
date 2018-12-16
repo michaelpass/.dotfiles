@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/michaelpass/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export MANPATH=$MANPATH:/opt/local/share/man
@@ -11,7 +11,7 @@ PLUGINS=$ZSH/plugins
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="alanpeabody"
+ZSH_THEME="michaelpass"
 
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
 alias f='open -a Finder ./'
