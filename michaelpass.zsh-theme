@@ -1,7 +1,15 @@
 # michaelpass.zsh-theme
 
-local user='%{$fg[green]%}%n%{$fg_bold[white]%}@%{$fg_bold[yellow]%}%m%{$reset_color%}'
-local pwd='%{$fg_bold[blue]%}%~%{$reset_color%}'
+# Note: local variables are used to compute text. External variables are
+# used by ZSH routines to draw terminal.
+
+# ------------------------ Text Computation -----------------------------
+
+# # User/directory prompt information - Deprecacted
+# local user='%{$fg[green]%}%n%{$fg_bold[white]%}@%{$fg_bold[yellow]%}%m%{$reset_color%}'
+# local pwd='%{$fg_bold[blue]%}%~%{$reset_color%}'
+
+# Ruby version manager
 local rvm=''
 if which rvm-prompt &> /dev/null; then
   rvm='%{$fg[green]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
@@ -10,8 +18,11 @@ else
     rvm='%{$fg[green]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%}'
   fi
 fi
+
+#Program return codes
 local return_code='%(?..%{$fg[red]%}%?↵%{$reset_color%})'
 local git_branch='$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset_color%}'
+local vim_status='$(vi_mode_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -25,12 +36,17 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭"
 
+# ------------------------ Text Display -----------------------------------
+# Old version
 #PROMPT="${user}:${pwd}$ "
 #RPROMPT="${return_code} ${git_branch} ${rvm}"
 
+# TODO - Clean up prompt with ${user} and ${pwd}
+
+# New version
 PROMPT=" %{$reset_color%}
 %{$FG[075]%}%n%{$fg_bold[white]%}@%{$FG[078]%}%m%{$fg_bold[white]%}:%{$FG[227]%}%~ 
 %{$FG[248]%}%D{%L:%M}%{$FG[248]%}%D{%p} %{$FG[105]%}%(!.#.»)%{$reset_color%} "
 
-RPROMPT="${return_code} ${git_branch} ${rvm}"
+RPROMPT="${return_code} ${git_branch}${rvm}${vim_status}"
 

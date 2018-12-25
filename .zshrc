@@ -7,16 +7,37 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export MANPATH=$MANPATH:/opt/local/share/man
 PLUGINS=$ZSH/plugins
+export EDITOR=vim
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="michaelpass"
 
+# Activate vi mode with <Esacpe>:
+set -o vi
+bindkey -v
+export KEYTIMEOUT=1
+
+# Shell improvements
+alias c='clear'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+alias .6='cd ../../../../../../'
+alias cic='set completion-ignore-case On'
+mcd () { mkdir -p "$1" && cd "$1"; }
+ql () { qlmanage -p "$*" >& /dev/null; }
+alias DT='tee ~/Desktop/terminalOut.txt'
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias less='less -FSRXc'
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
-alias f='open -a Finder ./'
 alias hide='chflags hidden'
-alias finder='open -a Finder ./'
 
 # Overide aliases
 alias lsl="ls -la"
@@ -70,8 +91,6 @@ alias lslf="(ls -la) | less"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
-
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -94,6 +113,8 @@ plugins=(
 	osx
 	zsh_reload
 	man
+	vi-mode
+	vim-interaction
 	tmux
 )
 
@@ -117,7 +138,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -127,12 +148,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-################################ Routine procedures ################################
-
-cp ~/.vimrc ~/.dotfiles/
-cp $ZSH/themes/alanpeabody.zsh-theme ~/.dotfiles
 
 ################################ Compatibility edits ###############################
 

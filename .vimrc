@@ -1,3 +1,9 @@
+"        _                    
+" __   _(_)_ __ ___  _ __ ___ 
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__ 
+"   \_/ |_|_| |_| |_|_|  \___|
+
 syntax on
 
 colorscheme desert
@@ -11,6 +17,11 @@ set ruler
 set showcmd
 set incsearch
 set number relativenumber
+
+" Color column
+set textwidth=80
+set colorcolumn=+1
+highlight ColorColumn ctermbg=0
 
 " Change cursor shape with insert
 let &t_SI = "\e[3 q"
@@ -33,46 +44,54 @@ augroup numbertoggle
 augroup END
 
 " // Note: The following code enables mouse use for compatible systems.
-" // Generally, it is advised against using the mouse with Vim, but to each their own.
+" // Generally, it is advised against using the mouse with Vim,
+" // but to each their own.
 
 "if has('mouse')
 "  set mouse=a
 "endif
 
-" #################### Vundle ####################
+" #################### Vundle compatibility ####################
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kana/vim-textobj-user' 
-Plugin 'tpope/vim-repeat'
-Plugin 'kana/vim-textobj-line'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'christoomey/vim-titlecase'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-scripts/ReplaceWithRegister'
-Plugin 'christoomey/vim-system-copy'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'terryma/vim-multiple-cursors'
-
+" Plugins go here
+" Plug 'gmarik/Vundle.vim'
+Plug 'kana/vim-textobj-user' 
+Plug 'tpope/vim-repeat'
+Plug 'kana/vim-textobj-line'
+Plug 'scrooloose/nerdtree'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
+Plug 'christoomey/vim-titlecase'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-sort-motion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-smooth-scroll' 
+" Plug 'liuchengxu/vim-which-key'
 " more Plugin commands
+
+call plug#end()
+
+
+" Plugin configuration - vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
+
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --path-to-ignore ~/.ignore --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " ...
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " Custom Key Bindings
 map <C-h> :NERDTreeToggle<CR>
