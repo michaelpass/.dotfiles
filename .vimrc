@@ -9,7 +9,8 @@ syntax on
 colorscheme desert
 " colorscheme monokai_pro
 
-set tabstop=2
+set expandtab
+set tabstop=4
 set numberwidth=3
 set autoindent
 set history=50
@@ -17,15 +18,20 @@ set ruler
 set showcmd
 set incsearch
 set number relativenumber
+set shiftwidth=4
 
 " Color column
 set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=0
 
-" Change cursor shape with insert
-let &t_SI = "\e[3 q"
-let &t_EI = "\e[2 q"
+" " Change cursor shape with insert
+" let &t_SI = "\e[3 q"
+" let &t_EI = "\e[2 q"
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " optional reset cursor on start:
 " augroup myCmds
@@ -96,3 +102,7 @@ let g:ctrlp_use_caching = 0
 " Custom Key Bindings
 map <C-h> :NERDTreeToggle<CR>
 
+set textwidth=0
+set textwidth=80
+set wrap linebreak nolist
+set formatoptions=l
