@@ -5,14 +5,14 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-export PATH=$HOME/.linuxbrew/bin:$PATH
-export PATH=$HOME/.linuxbrew/sbin:$PATH
-export MANPATH=$MANPATH:/opt/local/share/man
+# export PATH=$HOME/.linuxbrew/bin:$PATH
+# export PATH=$HOME/.linuxbrew/sbin:$PATH
+# export MANPATH=$MANPATH:/opt/local/share/man
 PLUGINS=$ZSH/plugins
 export EDITOR=vim
 
 # 256 color capabilities for compatibility with zsh
-TERM=konsole-256color
+# TERM=konsole-256color
 
 # Enable switching caps lock on system
 alias cap="setxkbmap -option caps:swapescape"
@@ -20,9 +20,7 @@ alias capoff="setxkbmap -option caps:none"
 alias dropbox="dropbox_uploader.sh"
 
 # Autostart tmux
-if [ "$TMUX" = "" ]; then tmux; fi
-
-
+# if [ "$TMUX" = "" ]; then tmux; fi
 
 ### START-Keychain ###
 # Let  re-use ssh-agent and/or gpg-agent between logins
@@ -32,27 +30,22 @@ if [ "$TMUX" = "" ]; then tmux; fi
 
 cap
 
-env=~/.ssh/agent.env
-
-agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
-
-agent_start () {
-				    (umask 077; ssh-agent >| "$env")
-						. "$env" >| /dev/null ; }
-
-agent_load_env
-
-# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-     agent_start
-		 ssh-add
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-		 ssh-add
-fi
-
-unset env
+# # SSH agent
+# env=~/.ssh/agent.env
+# agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+# agent_start () {
+# 				    (umask 077; ssh-agent >| "$env")
+# 						. "$env" >| /dev/null ; }
+# agent_load_env
+# # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+# agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+# if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+#      agent_start
+# 		 ssh-add
+# elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+# 		 ssh-add
+# fi
+# unset env
 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -82,7 +75,7 @@ alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'
 cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
+# alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
 alias hide='chflags hidden'
 
 # Overide aliases
@@ -148,12 +141,12 @@ plugins=(
   history-substring-search
   # brew
   # chucknorris
-  git-extras
-	lol
+  # git-extras
+	# lol
   # pep8
   # pip
   # python
-  web-search
+  # web-search
   autojump
 	colored-man-pages
 	# osx
@@ -198,7 +191,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 ################################ Compatibility edits ###############################
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors

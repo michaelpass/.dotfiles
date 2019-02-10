@@ -9,11 +9,8 @@ if [ -d "$DIRECTORY" ]; then
     cp -v -f ~/.tmux.conf ~/.dotfiles/
 
     if [ -d "$ZSH/themes" ]; then 
-
        cp -v -f $ZSH/themes/michaelpass.zsh-theme ~/.dotfiles/
-
     else
-
         echo "ZSH themes directory not found. Please check Oh-My-ZSH installation."
     fi
 

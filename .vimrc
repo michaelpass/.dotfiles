@@ -95,12 +95,12 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
-let g:ctrlp_user_command = 'ag %s -l --path-to-ignore ~/.ignore --hidden --nocolor -g ""'
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_user_command = 'ag %s -l --path-to-ignore ~/.ignore --hidden --nocolor -g ""'
+" let g:ctrlp_use_caching = 0
 " ...
 
 " Custom Key Bindings
-map <C-h> :NERDTreeToggle<CR>
+" map <C-h> :NERDTreeToggle<CR>
 
 set textwidth=0
 set textwidth=80
