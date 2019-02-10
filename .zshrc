@@ -146,17 +146,17 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   history-substring-search
-  brew
-  chucknorris
+  # brew
+  # chucknorris
   git-extras
 	lol
-  pep8
-  pip
-  python
+  # pep8
+  # pip
+  # python
   web-search
   autojump
 	colored-man-pages
-	osx
+	# osx
 	zsh_reload
 	man
 	vi-mode
