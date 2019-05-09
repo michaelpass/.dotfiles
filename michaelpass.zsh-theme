@@ -23,6 +23,7 @@ fi
 local return_code='%(?..%{$fg[red]%}%?↵%{$reset_color%})'
 local git_branch='$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset_color%}'
 local vim_status='$(vi_mode_prompt_info)'
+local git_hash='%b%{$fg[green]%}$(git_prompt_short_sha)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -44,8 +45,8 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭ "
 # TODO - Clean up prompt with ${user} and ${pwd}
 
 # New version
-PROMPT=" %{$reset_color%}
-%{$FG[075]%}%n%{$fg_bold[white]%}@%{$FG[078]%}%m%{$fg_bold[white]%}:%{$FG[227]%}%~ 
+PROMPT="
+%{$reset_color%}%{$FG[075]%}%n%{$fg_bold[white]%}@%{$FG[078]%}%m%{$fg_bold[white]%}:%{$FG[227]%}%~ %{$git_hash%} 
 %{$FG[248]%}%D{%L:%M}%{$FG[248]%}%D{%p} %{$FG[105]%}%(!.#.»)%{$reset_color%} "
 
 RPROMPT="${return_code} ${git_branch}${rvm}${vim_status}"

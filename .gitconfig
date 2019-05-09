@@ -1,0 +1,40 @@
+[user]
+	name = Michael Pass
+	email = mik3pass@gmail.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+	autocrlf = input
+	excludesfile = /Users/michaelpass/.gitignore_global
+[credential]
+	helper = osxkeychain
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[alias]
+	sla = log --oneline --decorate --graph --all
+	glog = log -E -i --grep
+	slog = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+	car = commit --amend --no-edit
+	unstage = reset
+	uncommit = reset --soft HEAD^
+	cm = commit
+	st = status
+	aa = add --all
+	sl = log --oneline --decorate -20
+	co = checkout
+[color]
+	ui = true
