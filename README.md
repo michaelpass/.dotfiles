@@ -13,7 +13,8 @@ Quick deployment on macOS Big Sur
 ```
 
 Note: Clones directly to working directory.
-[^1][^2]
+[^1]
+[^2]
 
 # TODO:
 1. Fork and refactor code for Ubuntu linux on AWS' EC2
