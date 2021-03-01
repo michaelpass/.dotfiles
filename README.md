@@ -23,4 +23,5 @@ Note: Clones directly to working directory.
 4. Fork and refactor for KaliLinux
 
 [^1]: User must have already configured GitHub for automatic cloning.
+
 [^2]: User must remove bash prompt symbol '$'
