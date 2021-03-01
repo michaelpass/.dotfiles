@@ -1,10 +1,10 @@
-### .dotfiles
+# .dotfiles
 Personal configuration files for quick workflow deployment
 
-# Purpose
+### Purpose
 Quick deployment on macOS Big Sur
 
-# Installation
+### Installation
 `$ cd; //Takes user directly home directory
 
  ```
