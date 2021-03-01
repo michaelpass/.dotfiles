@@ -15,8 +15,8 @@ export EDITOR=vim
 # TERM=konsole-256color
 
 # Enable switching caps lock on system
-alias cap="setxkbmap -option caps:swapescape"
-alias capoff="setxkbmap -option caps:none"
+# alias cap="setxkbmap -option caps:swapescape"
+# alias capoff="setxkbmap -option caps:none"
 alias dropbox="dropbox_uploader.sh"
 
 # Autostart tmux
@@ -27,8 +27,6 @@ alias dropbox="dropbox_uploader.sh"
 # /usr/bin/keychain --quiet $HOME/.ssh/id_rsa
 # source $HOME/.keychain/$HOSTNAME-sh
 ### End-Keychain ###
-
-cap
 
 # # SSH agent
 # env=~/.ssh/agent.env
@@ -135,26 +133,26 @@ alias lslf="(ls -la) | less"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  history-substring-search
-  # brew
-  # chucknorris
-  # git-extras
-	# lol
-  # pep8
-  # pip
-  # python
-  # web-search
-  autojump
-	colored-man-pages
-	# osx
-	zsh_reload
-	man
-	vi-mode
-	vim-interaction
-	tmux
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    history-substring-search
+    brew
+    chucknorris
+    git-extras
+    lol
+    pep8
+    pip
+    python
+    web-search
+    autojump
+    colored-man-pages
+    osx
+    zsh_reload
+    man
+    vi-mode
+    vim-interaction
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
