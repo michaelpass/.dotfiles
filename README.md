@@ -4,12 +4,12 @@ Personal configuration files for quick workflow deployment
 ### Purpose
 Quick deployment on macOS Big Sur
 
-### Installation
+### Installation (Done as individual shell commands)
 ```
- $ cd; //Takes user directly home directory
- $ git clone git@github.com:michaelpass/.dotfiles
- $ cd ~/.dotfiles
- $ cp ./* ~
+ $ cd; // Takes user directly to home directory.
+ $ git clone git@github.com:michaelpass/.dotfiles // Clones into a hidden folder in $HOME. 
+ $ cd ~/.dotfiles // Move into newly cloned directory
+ $ cp ./* ~ // Copies contents to $HOME.
 ```
 
 Note: Clones directly to working directory.
