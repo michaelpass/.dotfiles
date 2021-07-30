@@ -48,8 +48,8 @@ let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 " Underline in insert mode.
-" autocmd InsertEnter * set cul
-" autocmd InsertLeave * set nocul
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 augroup numbertoggle
   autocmd!
@@ -66,36 +66,34 @@ augroup END
 "endif
 
 " #################### Vundle compatibility ####################
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" set nocompatible              " be iMproved, required
+" filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 
 " Plugins go here
 " Plug 'gmarik/Vundle.vim'
-Plug 'Chun-Yang/vim-action-ag'
-Plug 'rking/ag.vim'
-Plug 'kana/vim-textobj-user' 
-Plug 'tpope/vim-repeat'
-Plug 'kana/vim-textobj-line'
-Plug 'scrooloose/nerdtree'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-entire'
-Plug 'christoomey/vim-titlecase'
-Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'christoomey/vim-system-copy'
+Plug 'adelarsq/vim-matchit'
 Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-titlecase'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Chun-Yang/vim-action-ag'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-surround'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user' 
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-smooth-scroll' 
-Plug 'adelarsq/vim-matchit'
-" Plug 'liuchengxu/vim-which-key'
-" more Plugin commands
-
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 
@@ -113,7 +111,7 @@ let g:ctrlp_working_path_mode = 'ra'
 " ...
 
 " Custom Key Bindings
-" map <C-h> :NERDTreeToggle<CR>
+map <C-h> :NERDTreeToggle<CR>
 
 set textwidth=0
 set textwidth=80
