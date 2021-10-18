@@ -24,7 +24,7 @@ export EDITOR=vim
 # Enable switching caps lock on system
 # alias cap="setxkbmap -option caps:swapescape"
 # alias capoff="setxkbmap -option caps:none"
-alias dropbox="dropbox_uploader.sh"
+# alias dropbox="dropbox_uploader.sh"
 
 # Autostart tmux
 # if [ "$TMUX" = "" ]; then tmux; fi
@@ -144,18 +144,18 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     history-substring-search
-    brew
-    chucknorris
+    # brew
+    # chucknorris
     git-extras
     lol
     pep8
     pip
     python
     web-search
-    autojump
+    # autojump
     colored-man-pages
     osx
-    zsh_reload
+    # zsh_reload
     man
     vi-mode
     vim-interaction
