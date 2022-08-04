@@ -154,7 +154,7 @@ plugins=(
     web-search
     # autojump
     colored-man-pages
-    osx
+    # osx
     # zsh_reload
     man
     vi-mode
