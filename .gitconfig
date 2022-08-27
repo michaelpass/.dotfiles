@@ -8,7 +8,7 @@
 	smudge = git-lfs smudge -- %f
 [core]
 	autocrlf = input
-	excludesfile = /Users/michaelpass/.gitignore_global
+	excludesfile = /Users/michaelpass/.gitignore
 [credential]
 	helper = osxkeychain
 [mergetool "Kaleidoscope"]
