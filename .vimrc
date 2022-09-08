@@ -38,32 +38,19 @@ set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=0
 
-" " Change cursor shape with insert (macOS)
-" let &t_SI = "\e[3 q"
-" let &t_EI = "\e[2 q"
-
-" let &t_SI = "\e[5 q"
-" let &t_EI = "\e[2 q"
-
-" :autocmd InsertEnter * set cul
-" :autocmd InsertLeave * set nocul
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set ttimeout
 set ttimeoutlen=1
 set ttyfast
 
-" reset the cursor on start (for older versions of vim, usually not required)
-" augroup myCmds
-" au!
-" autocmd VimEnter * silent !echo -ne "\e[2 q"
-" augroup END
-
-" " Change cursor shape (iTerm2/tmux)
-" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-" let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
 
 " Underline in insert mode.
 autocmd InsertEnter * set cul
