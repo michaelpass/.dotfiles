@@ -5,6 +5,8 @@
 # /\ /_____ \/____  >___|  /__|    \___  >
 # \/       \/     \/     \/            \/ 
 
+alias milo="bibleverse Isaiah.40.31"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -203,3 +205,5 @@ export HH_CONFIG=hicolor        # get more colors
 
 bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
+
+[ -f "/Users/michaelpass/.ghcup/env" ] && source "/Users/michaelpass/.ghcup/env" # ghcup-env
