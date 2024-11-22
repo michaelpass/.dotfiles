@@ -6,6 +6,13 @@
 # \/       \/     \/     \/            \/ 
 
 alias milo="bibleverse Isaiah.40.31"
+alias leah="bibleverse John.11.13"
+alias oscar="bibleverse John.3.16"
+alias maryjim="bibleverse"
+alias lynn="bibleverse"
+alias robbie="bibleverse"
+alias nana="bibleverse"
+alias lauren=""
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
