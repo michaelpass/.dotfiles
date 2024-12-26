@@ -26,6 +26,8 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # export MANPATH=$MANPATH:/opt/local/share/man
 PLUGINS=$ZSH/plugins
 export EDITOR=vim
+export PATH="/Library/TeX/texbin:$PATH"
+export SWORD_PATH=~/.sword
 
 # 256 color capabilities for compatibility with zsh
 # TERM=konsole-256color
