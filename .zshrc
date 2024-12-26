@@ -6,7 +6,7 @@
 # \/       \/     \/     \/            \/ 
 
 alias milo="bibleverse Isaiah.40.31"
-alias leah="bibleverse John.11.13"
+alias leah="bibleverse John.11.35"
 alias oscar="bibleverse John.3.16"
 alias maryjim="bibleverse"
 alias lynn="bibleverse"
