@@ -162,7 +162,9 @@ plugins=(
     pep8
     pip
     python
+    # fzf-tab
     web-search
+    zsh-history-substring-search
     # autojump
     colored-man-pages
     # osx
@@ -171,6 +173,7 @@ plugins=(
     vi-mode
     vim-interaction
     tmux
+    you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
