@@ -173,7 +173,7 @@ plugins=(
     vi-mode
     vim-interaction
     tmux
-    you-should-use
+    # you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
