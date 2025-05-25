@@ -12,7 +12,9 @@ alias maryjim="bibleverse"
 alias lynn="bibleverse"
 alias robbie="bibleverse"
 alias nana="bibleverse"
+alias laura="bibleverse Proverbs.3.5-6"
 alias lauren=""
+alias bv="bibleverse"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -21,6 +23,11 @@ alias lauren=""
 export ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
 # export PATH=$HOME/.linuxbrew/bin:$PATH
 # export PATH=$HOME/.linuxbrew/sbin:$PATH
 # export MANPATH=$MANPATH:/opt/local/share/man
@@ -162,9 +169,7 @@ plugins=(
     pep8
     pip
     python
-    # fzf-tab
     web-search
-    zsh-history-substring-search
     # autojump
     colored-man-pages
     # osx
@@ -173,7 +178,6 @@ plugins=(
     vi-mode
     vim-interaction
     tmux
-    # you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -219,3 +223,5 @@ bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 
 
 [ -f "/Users/michaelpass/.ghcup/env" ] && source "/Users/michaelpass/.ghcup/env" # ghcup-env
+export SSL_CERT_FILE="/opt/homebrew/etc/openssl@3/cert.pem"
+export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
