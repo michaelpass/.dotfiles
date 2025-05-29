@@ -16,6 +16,19 @@ alias laura="bibleverse Proverbs.3.5-6"
 alias lauren=""
 alias bv="bibleverse"
 
+# Homebrew Aliases
+# WARNING!!!
+# -----------------------------------------------------------------------------
+# HOMEBREW CONTROLS EVERYTHING ON THIS SYSTEM.
+# IT WILL ON YOURS TOO IF YOU DIVE DEEP INTO
+# MINE.
+# -----------------------------------------------------------------------------
+#
+#
+#
+
+alias bu = 'brew update'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
