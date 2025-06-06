@@ -19,10 +19,7 @@ Quick deployment of development environment configuration on macOS
 ### Quick Start
 ```bash
 # Clone the repository
-git clone git@github.com:michaelpass/.dotfiles ~/.dotfiles
-
-# Initialize and update submodules (including .emacs.d)
-git submodule update --init --recursive
+git clone --recurse-submodules git@github.com:michaelpass/.dotfiles.git
 
 # Copy configuration files to home directory
 cp -r ~/.dotfiles/* ~/
