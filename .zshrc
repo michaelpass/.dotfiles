@@ -49,6 +49,11 @@ export EDITOR=vim
 export PATH="/Library/TeX/texbin:$PATH"
 export SWORD_PATH=~/.sword
 
+# ngrok completion
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+fi
+
 # 256 color capabilities for compatibility with zsh
 # TERM=konsole-256color
 
@@ -200,7 +205,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
