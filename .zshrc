@@ -49,8 +49,9 @@ export EDITOR=vim
 export PATH="/Library/TeX/texbin:$PATH"
 export SWORD_PATH=~/.sword
 
-# ngrok completion
-if command -v ngrok &>/dev/null; then
+# ngrok completion (safe)
+if [[ -n "$ZSH_VERSION" ]] && command -v ngrok &>/dev/null; then
+    autoload -Uz compinit && compinit  # only runs if not already run
     eval "$(ngrok completion)"
 fi
 
